@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://erbha0lgeowl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6g1k"]
+size = Vector2(10, 172)
+
+[node name="piso" type="StaticBody2D"]
+collision_layer = 21
+collision_mask = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_t6g1k")

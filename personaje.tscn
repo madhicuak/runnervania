@@ -1,0 +1,444 @@
+[gd_scene load_steps=59 format=3 uid="uid://cq1xtg1s0eclh"]
+
+[ext_resource type="Script" uid="uid://bx0gq2h6le7eh" path="res://character_body_2d.gd" id="1_ltgau"]
+[ext_resource type="Texture2D" uid="uid://dwl2kyoq0wva5" path="res://Assets/personaje/walk1.png" id="2_35kqm"]
+[ext_resource type="Texture2D" uid="uid://bh7fv14my2mwd" path="res://Assets/personaje/punch1.png" id="2_d6vrp"]
+[ext_resource type="Texture2D" uid="uid://cwh4521eu1xv3" path="res://Assets/personaje/fall1.png" id="2_h755h"]
+[ext_resource type="Texture2D" uid="uid://bcuyivunqsfd4" path="res://Assets/personaje/walk2.png" id="3_1y5k2"]
+[ext_resource type="Texture2D" uid="uid://dgdu8pxd7tqqx" path="res://Assets/personaje/punch2.png" id="3_f0sqd"]
+[ext_resource type="Texture2D" uid="uid://d3jlq1bq884b7" path="res://Assets/personaje/fall2.png" id="3_pyv6t"]
+[ext_resource type="Texture2D" uid="uid://cgnf4u3ns0q68" path="res://Assets/personaje/punch3.png" id="4_b2nqx"]
+[ext_resource type="Texture2D" uid="uid://4tena0ewk6gf" path="res://Assets/personaje/walk3.png" id="4_f8plh"]
+[ext_resource type="Texture2D" uid="uid://btlemt861m8t7" path="res://Assets/personaje/hurt1.png" id="4_y2l4a"]
+[ext_resource type="Texture2D" uid="uid://kh0iqe2qvr1" path="res://Assets/personaje/hurt2.png" id="5_hujys"]
+[ext_resource type="Texture2D" uid="uid://hwujqiwabcrp" path="res://Assets/personaje/punch4.png" id="5_kwltd"]
+[ext_resource type="Texture2D" uid="uid://cgpxqeye1q43g" path="res://Assets/personaje/walk4.png" id="5_pqm5q"]
+[ext_resource type="Texture2D" uid="uid://cafvfnsi0udfr" path="res://Assets/personaje/punch5.png" id="6_0xjar"]
+[ext_resource type="Texture2D" uid="uid://db3u1w2mgdro8" path="res://Assets/personaje/walk5.png" id="6_2vb47"]
+[ext_resource type="Texture2D" uid="uid://bk2wh0rg1c4g0" path="res://Assets/personaje/punch6.png" id="7_8segr"]
+[ext_resource type="Texture2D" uid="uid://07f1vyj82xpc" path="res://Assets/personaje/walk6.png" id="7_xeorn"]
+[ext_resource type="Texture2D" uid="uid://dys88cljmt0ue" path="res://Assets/personaje/kick1.png" id="8_8segr"]
+[ext_resource type="Texture2D" uid="uid://dwa77uof6wcq6" path="res://Assets/personaje/kick2.png" id="9_t5t66"]
+[ext_resource type="Texture2D" uid="uid://ookw2ii8aqpf" path="res://Assets/personaje/kick3.png" id="10_83km4"]
+[ext_resource type="Texture2D" uid="uid://cbcwpulc4uw1v" path="res://Assets/personaje/idle1.png" id="10_wyluk"]
+[ext_resource type="Texture2D" uid="uid://cb7qdqpt4nn4w" path="res://Assets/personaje/idle2.png" id="11_n8vmr"]
+[ext_resource type="Texture2D" uid="uid://c06w55yxtf84x" path="res://Assets/personaje/kick4.png" id="11_ypa8i"]
+[ext_resource type="Texture2D" uid="uid://btbd3k7jn5njy" path="res://Assets/personaje/kick5.png" id="12_hmipk"]
+[ext_resource type="Texture2D" uid="uid://bubr3eglgx1ux" path="res://Assets/personaje/idle3.png" id="12_vopn2"]
+[ext_resource type="Texture2D" uid="uid://cfqalp3ckcq44" path="res://Assets/personaje/idle4.png" id="13_3rvlt"]
+[ext_resource type="Texture2D" uid="uid://b53o8qc5ddaar" path="res://Assets/personaje/jump1.png" id="14_cgtbb"]
+[ext_resource type="Texture2D" uid="uid://yxemigsav162" path="res://Assets/personaje/jump2.png" id="15_8huex"]
+[ext_resource type="Texture2D" uid="uid://y0a8m4sxs04a" path="res://Assets/ui/panel-transparent-border-026.png" id="16_wyluk"]
+[ext_resource type="Texture2D" uid="uid://2fsg2l2lyp2f" path="res://Assets/ui/divider-fade-001.png" id="17_n8vmr"]
+[ext_resource type="Texture2D" uid="uid://q35jsy5y5l5u" path="res://Assets/ui/1515-export3-removebg-preview.png" id="20_8huex"]
+[ext_resource type="Texture2D" uid="uid://cgue8rn102ory" path="res://Assets/ui/panel-007.png" id="20_vpyix"]
+[ext_resource type="Texture2D" uid="uid://y8jldy0ft8of" path="res://Assets/ui/panel-transparent-center-019.png" id="21_mcxej"]
+[ext_resource type="Texture2D" uid="uid://beb4tq0x340rq" path="res://Assets/ui/1515-export2-removebg-preview.png" id="21_vpyix"]
+[ext_resource type="Texture2D" uid="uid://bt8nb13mhvsla" path="res://Assets/ui/1515-export-removebg-preview.png" id="22_mcxej"]
+[ext_resource type="Texture2D" uid="uid://cvn6jsb6y3vkv" path="res://Assets/ui/1515-export3-export1-removebg-preview.png" id="22_wiotw"]
+[ext_resource type="Texture2D" uid="uid://dq6vawrkyojlv" path="res://Assets/ui/divider-fade-0010.png" id="24_mcxej"]
+[ext_resource type="Texture2D" uid="uid://bae22n3idiff4" path="res://Assets/ui/divider-005.png" id="25_pe31f"]
+[ext_resource type="Texture2D" uid="uid://coxx3gt3015gc" path="res://Enemigos/Explosion/Enemy-Death1.png" id="27_h43m4"]
+[ext_resource type="Script" uid="uid://ckq55h8u08edv" path="res://ataque_g.gd" id="27_hujys"]
+[ext_resource type="Texture2D" uid="uid://bdi3r5hf71r0l" path="res://Assets/ui/gameover.png" id="27_q2cvw"]
+[ext_resource type="Texture2D" uid="uid://chr3g4qhxokkh" path="res://Enemigos/Explosion/Enemy-Death2.png" id="28_6sw18"]
+[ext_resource type="Texture2D" uid="uid://cmk5gtjaa7up8" path="res://Assets/ui/divider-fade-005.png" id="28_x7w2g"]
+[ext_resource type="Texture2D" uid="uid://6bbg37v50dnu" path="res://Enemigos/Explosion/Enemy-Death3.png" id="29_7qrx2"]
+[ext_resource type="Texture2D" uid="uid://rrg6ywoa0avv" path="res://Assets/ui/panel-transparent-center-020.png" id="29_x7w2g"]
+[ext_resource type="Texture2D" uid="uid://4me5qep60ah2" path="res://Enemigos/Explosion/Enemy-Death4.png" id="30_l2qse"]
+[ext_resource type="Texture2D" uid="uid://cqqee5u7kmu2q" path="res://Enemigos/Explosion/Enemy-Death5.png" id="31_lj84d"]
+[ext_resource type="Texture2D" uid="uid://hecx53mvjom1" path="res://Enemigos/Explosion/Enemy-Death6.png" id="32_ay2ko"]
+[ext_resource type="Texture2D" uid="uid://c6flxy6sswb32" path="res://Assets/moneda/coinmari_ui.png" id="39_t5t66"]
+[ext_resource type="LabelSettings" uid="uid://d22iitk8g7kbi" path="res://escenas/mon.tres" id="49_6sw18"]
+[ext_resource type="AudioStream" uid="uid://bchjfmr26v2br" path="res://Assets/ui/Mighty Final Fight (NES) Music - Round 04 Factory.mp3" id="50_7qrx2"]
+[ext_resource type="AudioStream" uid="uid://djt6i6i48cuui" path="res://Assets/ui/Mighty Final Fight (NES) Music - Game Over.mp3" id="52_lj84d"]
+[ext_resource type="AudioStream" uid="uid://bhjpg2rykcnbq" path="res://Assets/ui/Mighty Final Fight Music (NES) - Round Clear.mp3" id="53_ay2ko"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gj0cs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d6vrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f0sqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b2nqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kwltd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0xjar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8segr")
+}],
+"loop": true,
+"name": &"atk_g",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_8segr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_t5t66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_83km4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ypa8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hmipk")
+}],
+"loop": true,
+"name": &"atk_p",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h755h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pyv6t")
+}],
+"loop": true,
+"name": &"caida",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y2l4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hujys")
+}],
+"loop": true,
+"name": &"daño",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("2_35kqm")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_1y5k2")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_f8plh")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_pqm5q")
+}, {
+"duration": 0.5,
+"texture": ExtResource("6_2vb47")
+}, {
+"duration": 0.5,
+"texture": ExtResource("7_xeorn")
+}],
+"loop": true,
+"name": &"derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_wyluk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_n8vmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vopn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3rvlt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_h43m4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6sw18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_7qrx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_l2qse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_lj84d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ay2ko")
+}],
+"loop": true,
+"name": &"muerte",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_cgtbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8huex")
+}],
+"loop": true,
+"name": &"salto",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ck3sb"]
+radius = 6.0
+height = 40.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_83km4"]
+font_size = 40
+font_color = Color(0.490196, 0.486275, 0, 0)
+outline_size = 4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_585sv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hujys"]
+radius = 9.0
+height = 42.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_ltgau")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -15)
+scale = Vector2(0.810976, 0.791667)
+sprite_frames = SubResource("SpriteFrames_gj0cs")
+animation = &"atk_p"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_ck3sb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(76, -20)
+zoom = Vector2(2, 2)
+process_callback = 0
+
+[node name="ui" type="CanvasLayer" parent="Camera2D"]
+layer = 20
+
+[node name="vida_tres" type="TextureRect" parent="Camera2D/ui"]
+offset_left = 127.0
+offset_right = 175.0
+offset_bottom = 48.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("16_wyluk")
+
+[node name="vida_dos" type="TextureRect" parent="Camera2D/ui"]
+offset_left = 64.0
+offset_right = 112.0
+offset_bottom = 48.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("16_wyluk")
+
+[node name="vida_uno" type="TextureRect" parent="Camera2D/ui"]
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("16_wyluk")
+
+[node name="Divider-fade-001" type="TextureRect" parent="Camera2D/ui"]
+offset_left = 74.0
+offset_top = -55.0
+offset_right = 170.0
+offset_bottom = -33.0
+rotation = 1.5708
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("17_n8vmr")
+
+[node name="Divider-fade-002" type="TextureRect" parent="Camera2D/ui"]
+offset_left = 137.0
+offset_top = -55.0
+offset_right = 233.0
+offset_bottom = -33.0
+rotation = 1.5708
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("17_n8vmr")
+
+[node name="MonedaNum" type="Label" parent="Camera2D/ui"]
+offset_left = 122.0
+offset_top = 74.0
+offset_right = 173.0
+offset_bottom = 129.0
+label_settings = SubResource("LabelSettings_83km4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel-007" type="TextureRect" parent="Camera2D/ui"]
+visible = false
+offset_left = -180.0
+offset_top = -118.0
+offset_right = -180.0
+offset_bottom = -118.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("20_vpyix")
+
+[node name="Panel-transparent-center-019" type="TextureRect" parent="Camera2D/ui"]
+offset_top = 69.0
+offset_right = 96.0
+offset_bottom = 165.0
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("21_mcxej")
+
+[node name="muerto" type="TextureRect" parent="Camera2D/ui"]
+offset_left = 2.00003
+offset_top = 75.0
+offset_right = 504.0
+offset_bottom = 572.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("22_wiotw")
+
+[node name="moribundo" type="TextureRect" parent="Camera2D/ui"]
+offset_left = 2.0
+offset_top = 75.0
+offset_right = 504.0
+offset_bottom = 572.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("20_8huex")
+
+[node name="herido" type="TextureRect" parent="Camera2D/ui"]
+offset_left = 2.0
+offset_top = 75.0
+offset_right = 504.0
+offset_bottom = 572.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("21_vpyix")
+
+[node name="sano" type="TextureRect" parent="Camera2D/ui"]
+offset_left = 2.0
+offset_top = 75.0
+offset_right = 504.0
+offset_bottom = 572.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("22_mcxej")
+
+[node name="Divider-005" type="TextureRect" parent="Camera2D/ui"]
+offset_top = 162.0
+offset_right = 192.0
+offset_bottom = 198.0
+texture = ExtResource("25_pe31f")
+
+[node name="Divider-fade-0010" type="TextureRect" parent="Camera2D/ui"]
+offset_left = -5.0
+offset_top = 41.0
+offset_right = 187.0
+offset_bottom = 85.0
+texture = ExtResource("24_mcxej")
+
+[node name="CoinmariUi" type="TextureRect" parent="Camera2D/ui"]
+offset_left = 114.0
+offset_top = 112.0
+offset_right = 146.0
+offset_bottom = 144.0
+scale = Vector2(2, 2)
+texture = ExtResource("39_t5t66")
+
+[node name="GameOver" type="CanvasLayer" parent="Camera2D/ui"]
+visible = false
+
+[node name="gameover" type="TextureRect" parent="Camera2D/ui/GameOver"]
+offset_left = 400.0
+offset_top = 150.0
+offset_right = 1424.0
+offset_bottom = 1174.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("27_q2cvw")
+
+[node name="Divider-fade-005" type="TextureRect" parent="Camera2D/ui/GameOver"]
+offset_left = 550.0
+offset_top = 375.0
+offset_right = 742.0
+offset_bottom = 411.0
+texture = ExtResource("28_x7w2g")
+
+[node name="Divider-fade-006" type="TextureRect" parent="Camera2D/ui/GameOver"]
+offset_left = 560.0
+offset_top = 190.0
+offset_right = 752.0
+offset_bottom = 226.0
+rotation = 3.14159
+texture = ExtResource("28_x7w2g")
+
+[node name="Panel-transparent-center-020" type="TextureRect" parent="Camera2D/ui/GameOver"]
+modulate = Color(0.568627, 0, 0.121569, 0.560784)
+offset_left = -300.0
+offset_top = -245.0
+offset_right = 388.0
+offset_bottom = 321.0
+scale = Vector2(2.55208, 1.97917)
+texture = ExtResource("29_x7w2g")
+
+[node name="end" type="CanvasLayer" parent="Camera2D/ui"]
+visible = false
+
+[node name="Total_monedas" type="Label" parent="Camera2D/ui/end"]
+offset_left = 350.0
+offset_top = 200.0
+offset_right = 850.0
+offset_bottom = 300.0
+label_settings = ExtResource("49_6sw18")
+
+[node name="monedas_nivel" type="Label" parent="Camera2D/ui/end"]
+offset_left = 350.0
+offset_top = 250.0
+offset_right = 850.0
+offset_bottom = 350.0
+label_settings = ExtResource("49_6sw18")
+
+[node name="Divider-fade-007" type="TextureRect" parent="Camera2D/ui/end"]
+offset_left = 630.0
+offset_top = 210.0
+offset_right = 949.0
+offset_bottom = 246.0
+rotation = 3.14159
+texture = ExtResource("28_x7w2g")
+
+[node name="Divider-fade-008" type="TextureRect" parent="Camera2D/ui/end"]
+offset_left = 529.0
+offset_top = 318.0
+offset_right = 863.0
+offset_bottom = 354.0
+texture = ExtResource("28_x7w2g")
+
+[node name="AtaqueG" type="Area2D" parent="."]
+script = ExtResource("27_hujys")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AtaqueG"]
+position = Vector2(16, -16)
+shape = SubResource("CircleShape2D_585sv")
+debug_color = Color(0.999496, 0.0199766, 1.15514e-06, 0.42)
+
+[node name="Hitbox" type="Area2D" parent="." groups=["hitbox"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_hujys")
+debug_color = Color(0.835798, 0.385763, 0.0978493, 0.42)
+
+[node name="musica" type="Node2D" parent="."]
+
+[node name="musiquita" type="AudioStreamPlayer2D" parent="musica"]
+stream = ExtResource("50_7qrx2")
+
+[node name="gameover" type="AudioStreamPlayer2D" parent="musica"]
+stream = ExtResource("52_lj84d")
+
+[node name="stage" type="AudioStreamPlayer2D" parent="musica"]
+stream = ExtResource("53_ay2ko")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
