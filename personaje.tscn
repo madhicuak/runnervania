@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://cq1xtg1s0eclh"]
+[gd_scene load_steps=60 format=3 uid="uid://cq1xtg1s0eclh"]
 
 [ext_resource type="Script" uid="uid://bx0gq2h6le7eh" path="res://character_body_2d.gd" id="1_ltgau"]
 [ext_resource type="Texture2D" uid="uid://dwl2kyoq0wva5" path="res://Assets/personaje/walk1.png" id="2_35kqm"]
@@ -54,6 +54,8 @@
 [ext_resource type="AudioStream" uid="uid://djt6i6i48cuui" path="res://Assets/ui/Mighty Final Fight (NES) Music - Game Over.mp3" id="52_lj84d"]
 [ext_resource type="AudioStream" uid="uid://bhjpg2rykcnbq" path="res://Assets/ui/Mighty Final Fight Music (NES) - Round Clear.mp3" id="53_ay2ko"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lj84d"]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_gj0cs"]
 animations = [{
 "frames": [{
@@ -76,28 +78,8 @@ animations = [{
 "texture": ExtResource("7_8segr")
 }],
 "loop": true,
-"name": &"atk_g",
+"name": &"ataque",
 "speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_8segr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_t5t66")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_83km4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_ypa8i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_hmipk")
-}],
-"loop": true,
-"name": &"atk_p",
-"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -186,6 +168,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("8_8segr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_t5t66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_83km4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ypa8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hmipk")
+}],
+"loop": true,
+"name": &"nadadejalo",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("14_cgtbb")
 }, {
 "duration": 1.0,
@@ -214,11 +216,18 @@ height = 42.0
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_ltgau")
 
+[node name="AttackArea" type="Area2D" parent="."]
+monitoring = false
+
+[node name="player_attack" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(18, -13)
+shape = SubResource("RectangleShape2D_lj84d")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -15)
 scale = Vector2(0.810976, 0.791667)
 sprite_frames = SubResource("SpriteFrames_gj0cs")
-animation = &"atk_p"
+animation = &"ataque"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -11)

@@ -11,7 +11,7 @@ var recibe_daño := false
 var monedas := 0
 var invulnerable := false
 @onready var label_monedas: Label = $Camera2D/ui/MonedaNum
-
+var atacando :=false 
 
 func _ready():
 	add_to_group("jugador")
@@ -21,6 +21,8 @@ func _ready():
 	$Camera2D/ui/end.visible = false
 	set_physics_process(true)
 	$"Camera2D/ui/Panel-transparent-center-019".modulate.a = 0.5
+	$AttackArea.add_to_group("player_attack")
+	$AttackArea.monitoring = false  # desactivado por defecto
 
 
 func _physics_process(delta):
@@ -40,7 +42,19 @@ func _physics_process(delta):
 	
 	if puede_moverse:
 		actualizar_animaciones(Input.get_axis("ui_left", "ui_right"))
+		
+	
+	if Input.is_action_just_pressed("ataque") and not atacando:
+		atacar()
 
+func atacar():
+	atacando = true
+	$AttackArea.monitoring = true  # activa la detección de colisión
+	sprite.play("ataque")  # la animación debe llamarse "ataque"
+
+	await get_tree().create_timer(0.8).timeout  # tiempo activo de ataque
+	$AttackArea.monitoring = false
+	atacando = false
 
 func actualizar_animaciones(direccion):
 	if recibe_daño:
@@ -108,6 +122,10 @@ func AnimDaño():
 	sprite.visible = false
 	await get_tree().create_timer(0.1).timeout
 	sprite.visible = true
+	
+	
+
+
 
 func AnimVidas():
 	if vidas == 3:
