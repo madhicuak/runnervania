@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cq1xtg1s0eclh"]
+[gd_scene load_steps=58 format=3 uid="uid://cq1xtg1s0eclh"]
 
 [ext_resource type="Script" uid="uid://bx0gq2h6le7eh" path="res://character_body_2d.gd" id="1_ltgau"]
 [ext_resource type="Texture2D" uid="uid://dwl2kyoq0wva5" path="res://Assets/personaje/walk1.png" id="2_35kqm"]
@@ -39,7 +39,6 @@
 [ext_resource type="Texture2D" uid="uid://dq6vawrkyojlv" path="res://Assets/ui/divider-fade-0010.png" id="24_mcxej"]
 [ext_resource type="Texture2D" uid="uid://bae22n3idiff4" path="res://Assets/ui/divider-005.png" id="25_pe31f"]
 [ext_resource type="Texture2D" uid="uid://coxx3gt3015gc" path="res://Enemigos/Explosion/Enemy-Death1.png" id="27_h43m4"]
-[ext_resource type="Script" uid="uid://ckq55h8u08edv" path="res://ataque_g.gd" id="27_hujys"]
 [ext_resource type="Texture2D" uid="uid://bdi3r5hf71r0l" path="res://Assets/ui/gameover.png" id="27_q2cvw"]
 [ext_resource type="Texture2D" uid="uid://chr3g4qhxokkh" path="res://Enemigos/Explosion/Enemy-Death2.png" id="28_6sw18"]
 [ext_resource type="Texture2D" uid="uid://cmk5gtjaa7up8" path="res://Assets/ui/divider-fade-005.png" id="28_x7w2g"]
@@ -55,6 +54,7 @@
 [ext_resource type="AudioStream" uid="uid://bhjpg2rykcnbq" path="res://Assets/ui/Mighty Final Fight Music (NES) - Round Clear.mp3" id="53_ay2ko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lj84d"]
+size = Vector2(36, 39)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gj0cs"]
 animations = [{
@@ -207,8 +207,6 @@ font_size = 40
 font_color = Color(0.490196, 0.486275, 0, 0)
 outline_size = 4
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_585sv"]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hujys"]
 radius = 9.0
 height = 42.0
@@ -220,17 +218,18 @@ script = ExtResource("1_ltgau")
 monitoring = false
 
 [node name="player_attack" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(18, -13)
+position = Vector2(26, -22.5)
 shape = SubResource("RectangleShape2D_lj84d")
+debug_color = Color(0.881962, 0.000340958, 0.817597, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -15)
+position = Vector2(4, -19)
 scale = Vector2(0.810976, 0.791667)
 sprite_frames = SubResource("SpriteFrames_gj0cs")
 animation = &"ataque"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -11)
+position = Vector2(-6, -11)
 shape = SubResource("CapsuleShape2D_ck3sb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -424,18 +423,10 @@ offset_right = 863.0
 offset_bottom = 354.0
 texture = ExtResource("28_x7w2g")
 
-[node name="AtaqueG" type="Area2D" parent="."]
-script = ExtResource("27_hujys")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AtaqueG"]
-position = Vector2(16, -16)
-shape = SubResource("CircleShape2D_585sv")
-debug_color = Color(0.999496, 0.0199766, 1.15514e-06, 0.42)
-
 [node name="Hitbox" type="Area2D" parent="." groups=["hitbox"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -11)
+position = Vector2(-5, -11)
 shape = SubResource("CapsuleShape2D_hujys")
 debug_color = Color(0.835798, 0.385763, 0.0978493, 0.42)
 

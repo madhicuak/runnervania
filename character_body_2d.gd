@@ -222,3 +222,42 @@ func _on_murci_body_entered(body: Node2D) -> void:
 	if body.is_in_group("jugador"):
 		vidas -= 3
 		ReducirVidas()
+
+
+#guardado
+
+# Variables ya existentes
+var vida = 3
+var moneda = 0
+
+# GUARDADO
+func guardar_datos():
+	var save_data = {
+		"posicion": global_position,
+		"vidas": vidas,
+		"monedas": monedas
+	}
+	var file = FileAccess.open("user://jugador.save", FileAccess.WRITE)
+	file.store_var(save_data)
+	file.close()
+
+func cargar_datos():
+	if FileAccess.file_exists("user://jugador.save"):
+		var file = FileAccess.open("user://jugador.save", FileAccess.READ)
+		var save_data = file.get_var()
+		file.close()
+
+		if "posicion" in save_data:
+			global_position = save_data["posicion"]
+		if "vidas" in save_data:
+			vidas = save_data["vidas"]
+		if "monedas" in save_data:
+			monedas = save_data["monedas"]
+			label_monedas.text = str(monedas)
+
+		AnimVidas()  
+
+# Detectar tecla de guardado
+func _input(event):
+	if event.is_action_pressed("guardar"):
+		guardar_datos()
