@@ -1,7 +1,7 @@
 <h1 align="center" style="font-weight:bold;">
   <img src="" /> 
   <span style="color:#708090;">RUNNERVANIA</span>
-  <img src=Uploading assets_task_01k1mx0hjdfr8aazdgfh4arke6_task_01k1mx0hjdfr8aazdgfh4arke6_genid_4df659d8-fc25-4d4d-bb64-4d32b30e9849_25_08_02_08_05_012976_videos_00000_170400934_md.mp4…" />
+  <img src=…" />
 </h1>
 
 <h3 align="center" style="color:#708090;">Maria Jose Vazquez Romano</h3>
