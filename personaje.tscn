@@ -223,7 +223,7 @@ shape = SubResource("RectangleShape2D_lj84d")
 debug_color = Color(0.881962, 0.000340958, 0.817597, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(4, -19)
+position = Vector2(3, -21)
 scale = Vector2(0.810976, 0.791667)
 sprite_frames = SubResource("SpriteFrames_gj0cs")
 animation = &"ataque"
