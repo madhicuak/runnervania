@@ -4,7 +4,6 @@
   <img src="https://media.tenor.com/SrQO6J_VT-4AAAAj/cemetery-divider.gif" />
 </h1>
 
-<h3 align="center" style="color:#708090;">Abdiel Josue Pacheco Robles</h3>
 <h3 align="center" style="color:#708090;">Maria Jose Vazquez Romano</h3>
 
 <p align="center">
@@ -12,7 +11,7 @@
 </p>
 
 <div align="center">
-  <p>El juego es un pequeño plataformero inspirado en clásicos del género, claramente bebiendo mayoritariamente de los juegos de Castlevania (sobre todo los de la Game Boy Advance).</p>
+  <p>Juego inspirado en los juegos, serie, peliculas y libros de dracula y  castelvania .</p>
   <p>Una mecánica que predomina en el primer nivel es la urgencia por alcanzar la finalidad del mapa a la derecha, para escapar de un muro de murciélagos. De ahí lo "runner", además el camino está habitado por criaturas del averno, que complicarán la huida de nuestro personaje.</p>
 </div>
 
@@ -49,7 +48,7 @@
 
 <h3 align="center" style="color:#708090;">Nivel 2</h3>
 <p align="center"><img src="https://alejandrom123.sg-host.com/wp-content/uploads/2025/07/esc2.png" width="70%"/></p>
-<p align="center">El segundo nivel, tiene enemigos, monedas y pociones. Además tiene el texto de finalización del juego.</p>
+<p align="center">El segundo nivel , tiene enemigos, monedas y pociones, no perdiendo su escencia de "comido por la madre naturaleza". Además tiene el texto de finalización del juego.</p>
 
 <h3 align="center" style="color:#708090;">Personaje</h3>
 <p align="center"><img src="https://alejandrom123.sg-host.com/wp-content/uploads/2025/07/esc31.png" width="70%"/></p>
@@ -63,9 +62,6 @@
 <p align="center"><img src="https://alejandrom123.sg-host.com/wp-content/uploads/2025/07/esc7.png" width="70%"/></p>
 <p align="center">Las plataformas del juego son la misma escena copypasteada y con el tilemap/collision cambiadas.</p>
 
-<h3 align="center" style="color:#708090;">Agua</h3>
-<p align="center"><img src="https://alejandrom123.sg-host.com/wp-content/uploads/2025/07/esc6.png" width="70%"/></p>
-<p align="center">Es la escena necesaria para el efecto de agua animado.</p>
 
 <h3 align="center" style="color:#708090;">Moneda</h3>
 <p align="center"><img src="https://alejandrom123.sg-host.com/wp-content/uploads/2025/07/esc8.png" width="70%"/></p>
@@ -488,18 +484,79 @@ func LAVA_MOV():
 </details>
 
 <h1></h1>
+
+<details>
+	""
+	animacion y funcion para activar el ataque del personaje hacia los enemigos 
+	""
+	func atacar():
+	atacando = true
+	$AttackArea.monitoring = true  # activa la detección de colisión
+	sprite.play("ataque")  # la animación debe llamarse "ataque"
+
+	await get_tree().create_timer(0.3).timeout  # tiempo activo de ataque
+	$AttackArea.monitoring = false
+	atacando = false
+</details>
+<h1></h1>
+
+<details>
+	"" sistema de guardado
+	""
+	# Variables ya existentes
+var vidas = 3
+var monedas = 0
+
+# GUARDADO
+func guardar_datos():
+	var save_data = {
+		"posicion": global_position,
+		"vidas": vidas,
+		"monedas": monedas
+	}
+	var file = FileAccess.open("user://jugador.save", FileAccess.WRITE)
+	file.store_var(save_data)
+	file.close()
+
+func cargar_datos():
+	if FileAccess.file_exists("user://jugador.save"):
+		var file = FileAccess.open("user://jugador.save", FileAccess.READ)
+		var save_data = file.get_var()
+		file.close()
+
+		if "posicion" in save_data:
+			global_position = save_data["posicion"]
+		if "vidas" in save_data:
+			vidas = save_data["vidas"]
+		if "monedas" in save_data:
+			monedas = save_data["monedas"]
+			label_monedas.text = str(monedas)
+
+		AnimVidas()  # para que se actualicen las imágenes de vida
+
+# Llamar al cargar escena
+func _ready():
+	# ...
+	cargar_datos()
+
+# Detectar tecla de guardado
+func _input(event):
+	if event.is_action_pressed("guardar"):
+		guardar_datos()
+
+  </details>
+  <h1></h1>
 <h1 align="center" style="font-weight:bold; color:#708090;">Dificultades</h1>
 
 <div align="center">
-  <p><strong>Maria Romano:</strong> Tuve dificultad en ejecutar errores, el juego "colisionó" tres veces y tuve que repararlo desde la git bash, tuve dificultad en saber cual era ese error y trabajé en el toda la tarde.</p>
-  <p>Al igual que al poner el contador tuve un poco de problemas pues no las agarraba y vi que estaba poniendo mal una función.</p>
+  <p><strong>maria</strong> he de confesar que este juego lo recolecte del juego anterior que hice con mi compañero y mi gran amigo abdiel, el cual tuve en mente agregarle el modo ataque, el modo guardado y la mejora del segundo nivel.</p>
+  <p>solo tuve un pequeño problema y es el que a mi no se me da el decorar de lo mejor, puedo confesar que me la pase mas horas diseñando que programando.</p>
   
-  <p><strong>Abdiel Pacheco:</strong> Yo tuve dificultades en las conexiones de tipo señal, además en un par de ocasiones parecía que el personaje se salía de la clase "jugador" aún cuando estaba declarado directamente en su código y en el editor de Godot.</p>
 </div>
 
 <h1></h1>
 <h1 align="center" style="font-weight:bold; color:#708090;">Conclusión</h1>
-Habría sido todo un desastre si no tuvieramos la herramienta Git. Al intercambiar archivos zip de GODOT nos habría tomado hasta horas el migrar los cambios de una computadora a otra. La alternativa era solamente pasar los archivos que fueron alterados, haciendo engorrosa la alteración de los archivos, además que dependía de nuestra memoria el no omitir ningún archivo.
+En conclusion, es un juego en el cual pude hacercarme mas al mundo del videojuego, ya que yo no suelo ser de jugar videojuegos y esto me abrio el panorama, al igual de reforzar mi uso de godot y la logica de programcion que se empleo.
 
 <p></p>
 <p></p>
