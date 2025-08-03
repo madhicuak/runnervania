@@ -1,21 +1,20 @@
-[gd_scene load_steps=58 format=3 uid="uid://cq1xtg1s0eclh"]
+[gd_scene load_steps=57 format=3 uid="uid://cq1xtg1s0eclh"]
 
 [ext_resource type="Script" uid="uid://bx0gq2h6le7eh" path="res://character_body_2d.gd" id="1_ltgau"]
+[ext_resource type="Texture2D" uid="uid://byl8g3jjpn8og" path="res://Assets/personaje/crouch-kick1.png" id="2_7qrx2"]
 [ext_resource type="Texture2D" uid="uid://dwl2kyoq0wva5" path="res://Assets/personaje/walk1.png" id="2_35kqm"]
-[ext_resource type="Texture2D" uid="uid://bh7fv14my2mwd" path="res://Assets/personaje/punch1.png" id="2_d6vrp"]
 [ext_resource type="Texture2D" uid="uid://cwh4521eu1xv3" path="res://Assets/personaje/fall1.png" id="2_h755h"]
 [ext_resource type="Texture2D" uid="uid://bcuyivunqsfd4" path="res://Assets/personaje/walk2.png" id="3_1y5k2"]
-[ext_resource type="Texture2D" uid="uid://dgdu8pxd7tqqx" path="res://Assets/personaje/punch2.png" id="3_f0sqd"]
+[ext_resource type="Texture2D" uid="uid://drtnrf4hywnqe" path="res://Assets/personaje/crouch-kick2.png" id="3_l2qse"]
 [ext_resource type="Texture2D" uid="uid://d3jlq1bq884b7" path="res://Assets/personaje/fall2.png" id="3_pyv6t"]
-[ext_resource type="Texture2D" uid="uid://cgnf4u3ns0q68" path="res://Assets/personaje/punch3.png" id="4_b2nqx"]
 [ext_resource type="Texture2D" uid="uid://4tena0ewk6gf" path="res://Assets/personaje/walk3.png" id="4_f8plh"]
+[ext_resource type="Texture2D" uid="uid://bsiy6haicxp4h" path="res://Assets/personaje/crouch-kick3.png" id="4_lj84d"]
 [ext_resource type="Texture2D" uid="uid://btlemt861m8t7" path="res://Assets/personaje/hurt1.png" id="4_y2l4a"]
+[ext_resource type="Texture2D" uid="uid://dkn6xf4qed8ay" path="res://Assets/personaje/crouch-kick4.png" id="5_ay2ko"]
 [ext_resource type="Texture2D" uid="uid://kh0iqe2qvr1" path="res://Assets/personaje/hurt2.png" id="5_hujys"]
-[ext_resource type="Texture2D" uid="uid://hwujqiwabcrp" path="res://Assets/personaje/punch4.png" id="5_kwltd"]
 [ext_resource type="Texture2D" uid="uid://cgpxqeye1q43g" path="res://Assets/personaje/walk4.png" id="5_pqm5q"]
-[ext_resource type="Texture2D" uid="uid://cafvfnsi0udfr" path="res://Assets/personaje/punch5.png" id="6_0xjar"]
 [ext_resource type="Texture2D" uid="uid://db3u1w2mgdro8" path="res://Assets/personaje/walk5.png" id="6_2vb47"]
-[ext_resource type="Texture2D" uid="uid://bk2wh0rg1c4g0" path="res://Assets/personaje/punch6.png" id="7_8segr"]
+[ext_resource type="Texture2D" uid="uid://cssrac81exh0k" path="res://Assets/personaje/crouch-kick5.png" id="6_54m2x"]
 [ext_resource type="Texture2D" uid="uid://07f1vyj82xpc" path="res://Assets/personaje/walk6.png" id="7_xeorn"]
 [ext_resource type="Texture2D" uid="uid://dys88cljmt0ue" path="res://Assets/personaje/kick1.png" id="8_8segr"]
 [ext_resource type="Texture2D" uid="uid://dwa77uof6wcq6" path="res://Assets/personaje/kick2.png" id="9_t5t66"]
@@ -59,27 +58,27 @@ size = Vector2(36, 39)
 [sub_resource type="SpriteFrames" id="SpriteFrames_gj0cs"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_d6vrp")
+"duration": 1.1,
+"texture": ExtResource("2_7qrx2")
+}, {
+"duration": 1.1,
+"texture": ExtResource("3_l2qse")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_f0sqd")
+"texture": ExtResource("4_lj84d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_b2nqx")
+"texture": ExtResource("4_lj84d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_kwltd")
+"texture": ExtResource("5_ay2ko")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_0xjar")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_8segr")
+"texture": ExtResource("6_54m2x")
 }],
 "loop": true,
 "name": &"ataque",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -227,6 +226,7 @@ position = Vector2(3, -21)
 scale = Vector2(0.810976, 0.791667)
 sprite_frames = SubResource("SpriteFrames_gj0cs")
 animation = &"ataque"
+frame_progress = 0.963161
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6, -11)
