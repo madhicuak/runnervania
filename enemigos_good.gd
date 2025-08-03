@@ -54,10 +54,16 @@ func _physics_process(delta):
 		sprite_enemigo.flip_h = direction > 0
 		sprite_enemigo_gd.flip_h = direction > 0
 
-func _on_HurtBox_area_entered(area):
-	if area.is_in_group("player_attack"):
-		die()
+#func _on_HurtBox_area_entered(area):
+#	if area.is_in_group("player_attack"):
+#		die()
 
 func die():
 	sprite_enemigo.play("die")
 	queue_free()
+
+
+
+func _on_hurt_box_area_entered(area):
+	if area.is_in_group("player_attack") and area.is_monitoring():
+		die()

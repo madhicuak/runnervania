@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cxkxf06vj08xy"]
+[gd_scene load_steps=39 format=3 uid="uid://cxkxf06vj08xy"]
 
 [ext_resource type="Script" uid="uid://yh7rsn52u5ef" path="res://enemigos_good.gd" id="1_euctt"]
 [ext_resource type="Texture2D" uid="uid://capqp61u7k1y5" path="res://icon.svg" id="2_tiqiw"]
@@ -228,6 +228,9 @@ size = Vector2(20, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5hhi"]
 size = Vector2(20, 30)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_07k7n"]
+radius = 17.0
+
 [node name="Enemigos_good" type="CharacterBody2D"]
 script = ExtResource("1_euctt")
 
@@ -256,3 +259,11 @@ shape = SubResource("RectangleShape2D_u5hhi")
 debug_color = Color(0.992915, 0, 0.245263, 0.42)
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="HurtBox" type="Area2D" parent="." groups=["enemigo"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(5, 1)
+shape = SubResource("CircleShape2D_07k7n")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

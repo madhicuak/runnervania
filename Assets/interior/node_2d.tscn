@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://cp0mm455prqti"]
+[gd_scene load_steps=53 format=4 uid="uid://cp0mm455prqti"]
 
 [ext_resource type="Texture2D" uid="uid://dp6x76kl7hww4" path="res://Assets/interior/tileset.png" id="1_ypuf3"]
 [ext_resource type="Texture2D" uid="uid://bo2d0ekqnt2w8" path="res://Assets/interior/column.png" id="2_7ejnb"]
@@ -25,22 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bu4sl27jkmhcm" path="res://escenas/plat_media.tscn" id="19_oihhy"]
 [ext_resource type="PackedScene" uid="uid://n28lc1keah7c" path="res://escenas/plat_desap.tscn" id="20_luk7b"]
 [ext_resource type="PackedScene" uid="uid://gsulyt7ivmu5" path="res://Assets/misc/agua.tscn" id="21_oihhy"]
-[ext_resource type="Texture2D" uid="uid://cb27sflcefkjn" path="res://Assets/posiones/murcie.png" id="26_hgx1a"]
 [ext_resource type="Script" uid="uid://bpf11022wn2g2" path="res://murci_2.gd" id="27_tbgvi"]
-
-[sub_resource type="GDScript" id="GDScript_qa63q"]
-script/source = "extends Node2D
-#var puntuacion=0 
-#@onready var etiqueta_puntuacion: Label=$CanvasLayer/ContadorMonedas
-
-#signal puntuacion_actualizada(puntuacion_actual:int)
-
-#func incrementa_un_punto():
-	#puntuacion+=1
-	#puntuacion_actualizada.emit(puntuacion)
-	
-	#holasoymari
-"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wj5ce"]
 texture = ExtResource("1_ypuf3")
@@ -2193,7 +2178,7 @@ outline_size = 2
 outline_color = Color(0.630857, 0.00029456, 0.630934, 1)
 
 [node name="Node2D" type="Node2D"]
-script = SubResource("GDScript_qa63q")
+script = ExtResource("27_tbgvi")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAUAP3/AAAMAAYAAAAUAP7/AAAMAAcAAAAUAP//AAAMAAgAAAAVAP7/AAANAAcAAAAVAP//AAANAAgAAAAWAP7/AAAOAAcAAAAWAP//AAAOAAgAAAAXAP7/AAAPAAcAAAAXAP//AAAPAAgAAAAYAP3/AAAQAAYAAAAYAP7/AAAQAAcAAAAYAP//AAAQAAgAAAA9AP3/AAAMAAYAAAA9AP7/AAAMAAcAAAA9AP//AAAMAAgAAAA+AP7/AAANAAcAAAA+AP//AAANAAgAAAA/AP7/AAAOAAcAAAA/AP//AAAOAAgAAABAAP7/AAAPAAcAAABAAP//AAAPAAgAAABBAP3/AAAQAAYAAABBAP7/AAAQAAcAAABBAP//AAAQAAgAAAAZAP3/AAAMAAYAAAAZAP7/AAAMAAcAAAAZAP//AAAMAAgAAAAaAP7/AAANAAcAAAAaAP//AAANAAgAAAAbAP7/AAAOAAcAAAAbAP//AAAOAAgAAAAcAP7/AAAPAAcAAAAcAP//AAAPAAgAAAAdAP3/AAAQAAYAAAAdAP7/AAAQAAcAAAAdAP//AAAQAAgAAAAeAP3/AAAMAAYAAAAeAP7/AAAMAAcAAAAeAP//AAAMAAgAAAAfAP7/AAANAAcAAAAfAP//AAANAAgAAAAgAP7/AAAOAAcAAAAgAP//AAAOAAgAAAAhAP7/AAAPAAcAAAAhAP//AAAPAAgAAAAiAP3/AAAQAAYAAAAiAP7/AAAQAAcAAAAiAP//AAAQAAgAAAAjAP3/AAAMAAYAAAAjAP7/AAAMAAcAAAAjAP//AAAMAAgAAAAkAP7/AAANAAcAAAAkAP//AAANAAgAAAAlAP7/AAAOAAcAAAAlAP//AAAOAAgAAAAmAP7/AAAPAAcAAAAmAP//AAAPAAgAAAAnAP3/AAAQAAYAAAAnAP7/AAAQAAcAAAAnAP//AAAQAAgAAAASAP7/AAAEAAcAAAASAP//AAAEAAgAAAATAP7/AAAFAAcAAAATAP//AAAFAAgAAAAWAPr/AAAEAAcAAAAWAPv/AAAEAAgAAAAXAPr/AAAFAAcAAAAXAPv/AAAFAAgAAAAaAPr/AAAEAAcAAAAaAPv/AAAEAAgAAAAbAPr/AAAFAAcAAAAbAPv/AAAFAAgAAAAeAPr/AAAEAAcAAAAeAPv/AAAEAAgAAAAfAPr/AAAFAAcAAAAfAPv/AAAFAAgAAAAjAPr/AAAEAAcAAAAjAPv/AAAEAAgAAAAkAPr/AAAFAAcAAAAkAPv/AAAFAAgAAAAoAPr/AAAEAAcAAAAoAPv/AAAEAAgAAAApAPr/AAAFAAcAAAApAPv/AAAFAAgAAAA=")
@@ -2332,6 +2317,7 @@ position = Vector2(1271, 59)
 shape = SubResource("RectangleShape2D_mkh75")
 
 [node name="Sprite2D" type="Sprite2D" parent="reset"]
+script = ExtResource("27_tbgvi")
 
 [node name="tronc_desap" parent="reset" instance=ExtResource("18_luk7b")]
 position = Vector2(382, -9)
@@ -2373,10 +2359,8 @@ position = Vector2(1103, -3)
 
 [node name="agua" parent="." instance=ExtResource("21_oihhy")]
 position = Vector2(-540, 148)
-
-[node name="Murcie" type="Sprite2D" parent="."]
-position = Vector2(-847, -79)
-texture = ExtResource("26_hgx1a")
 script = ExtResource("27_tbgvi")
+distancia = 5
+velocidad = 1.0
 
 [connection signal="body_entered" from="reset" to="CharacterBody2D" method="_on_reset_body_entered"]
