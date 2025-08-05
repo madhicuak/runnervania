@@ -2473,3 +2473,4 @@ position = Vector2(-667, -15)
 shape = SubResource("RectangleShape2D_4juw3")
 
 [connection signal="body_entered" from="reset" to="CharacterBody2D" method="_on_reset_body_entered"]
+[connection signal="body_entered" from="murci" to="CharacterBody2D" method="_on_murci_body_entered"]
