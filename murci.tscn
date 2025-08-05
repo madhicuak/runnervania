@@ -1,0 +1,108 @@
+[gd_scene load_steps=4 format=3 uid="uid://2g5phcx1w64p"]
+
+[ext_resource type="Script" uid="uid://benbg3bc6vmx1" path="res://murci.gd" id="1_tv35b"]
+[ext_resource type="Texture2D" uid="uid://cb27sflcefkjn" path="res://Assets/posiones/murcie.png" id="2_fvwki"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tv35b"]
+size = Vector2(144.25, 1055.5)
+
+[node name="Murci" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_tv35b")
+
+[node name="murcinodes" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-289, 408)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D2" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-289, 32)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D3" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-289, -344)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D4" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-427.25, 410)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D5" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-427.25, 34)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D6" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-427.25, -342)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D7" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-592.25, 410)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D8" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-592.25, 34)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D9" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-592.25, -342)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D10" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-735.25, 410)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D11" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-735.25, 34)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D12" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-735.25, -342)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D13" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-900.25, 410)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D14" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-900.25, 34)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D15" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-900.25, -342)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D16" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-1053.25, 410)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D17" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-1053.25, 34)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="Sprite2D18" type="Sprite2D" parent="murcinodes"]
+position = Vector2(-1053.25, -342)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("2_fvwki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-372, 43)
+shape = SubResource("RectangleShape2D_tv35b")

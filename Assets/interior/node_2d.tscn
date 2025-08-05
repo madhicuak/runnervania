@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://cp0mm455prqti"]
+[gd_scene load_steps=57 format=4 uid="uid://cp0mm455prqti"]
 
 [ext_resource type="Texture2D" uid="uid://dp6x76kl7hww4" path="res://Assets/interior/tileset.png" id="1_ypuf3"]
 [ext_resource type="Texture2D" uid="uid://bo2d0ekqnt2w8" path="res://Assets/interior/column.png" id="2_7ejnb"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://be03sbn80opkx" path="res://Assets/interior/plataformainteriordos.tscn" id="10_gv80v"]
 [ext_resource type="PackedScene" uid="uid://bggjfxcctvt3s" path="res://Assets/interior/area_2d.tscn" id="11_ec7fl"]
 [ext_resource type="Script" uid="uid://cfpa6owmodu4v" path="res://Assets/interior/plataformainteriordos.gd" id="11_he27a"]
+[ext_resource type="Script" uid="uid://x86t2tdsgdl1" path="res://murcinodes.gd" id="11_v2ne2"]
 [ext_resource type="Script" uid="uid://dcotaa2htggb3" path="res://Assets/interior/area_2d.gd" id="14_mkh75"]
 [ext_resource type="PackedScene" uid="uid://cxkxf06vj08xy" path="res://Enemigos/enemigos_good.tscn" id="16_q3r4v"]
 [ext_resource type="Script" uid="uid://02eqfm4wt3yd" path="res://Assets/interior/gracias.gd" id="17_4hsqv"]
@@ -26,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://n28lc1keah7c" path="res://escenas/plat_desap.tscn" id="20_luk7b"]
 [ext_resource type="PackedScene" uid="uid://gsulyt7ivmu5" path="res://Assets/misc/agua.tscn" id="21_oihhy"]
 [ext_resource type="Script" uid="uid://bpf11022wn2g2" path="res://murci_2.gd" id="27_tbgvi"]
+[ext_resource type="Script" uid="uid://benbg3bc6vmx1" path="res://murci.gd" id="27_v2ne2"]
+[ext_resource type="Texture2D" uid="uid://cb27sflcefkjn" path="res://Assets/posiones/murcie.png" id="28_stq7k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wj5ce"]
 texture = ExtResource("1_ypuf3")
@@ -2177,7 +2180,10 @@ animations = [{
 outline_size = 2
 outline_color = Color(0.630857, 0.00029456, 0.630934, 1)
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4juw3"]
+size = Vector2(150, 786)
+
+[node name="level2" type="Node2D"]
 script = ExtResource("27_tbgvi")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -2216,9 +2222,12 @@ position = Vector2(136, -18)
 [node name="coin4" parent="." instance=ExtResource("4_7ejnb")]
 position = Vector2(569, -21)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("5_wto2r")]
+[node name="CharacterBody2D" parent="." groups=["jugador"] instance=ExtResource("5_wto2r")]
 z_index = 4
-position = Vector2(-408, -13)
+position = Vector2(-409, -18)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("11_v2ne2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -2228,9 +2237,6 @@ script = ExtResource("7_iqs48")
 
 [node name="piso" parent="Node2D" instance=ExtResource("6_qa63q")]
 position = Vector2(-275, 6)
-
-[node name="piso2" parent="Node2D" instance=ExtResource("6_qa63q")]
-position = Vector2(-138, 5)
 
 [node name="piso5" parent="Node2D" instance=ExtResource("6_qa63q")]
 position = Vector2(-430, 6)
@@ -2320,7 +2326,7 @@ shape = SubResource("RectangleShape2D_mkh75")
 script = ExtResource("27_tbgvi")
 
 [node name="tronc_desap" parent="reset" instance=ExtResource("18_luk7b")]
-position = Vector2(382, -9)
+position = Vector2(-169, -12)
 
 [node name="plat_media" parent="reset" instance=ExtResource("19_oihhy")]
 position = Vector2(-214, -110)
@@ -2358,9 +2364,112 @@ position = Vector2(310, -39)
 position = Vector2(1103, -3)
 
 [node name="agua" parent="." instance=ExtResource("21_oihhy")]
-position = Vector2(-540, 148)
+position = Vector2(-794, 94)
 script = ExtResource("27_tbgvi")
-distancia = 5
-velocidad = 1.0
+
+[node name="murci" type="Area2D" parent="."]
+z_index = 21
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("27_v2ne2")
+
+[node name="murcinodes" type="Node2D" parent="murci"]
+
+[node name="Sprite2D" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-567, 373)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D2" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-574, -267)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D3" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-555, -358)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D4" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-604, 0)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D5" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-592, 39)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D6" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-795, -342)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D7" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-738, 337)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D8" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-738, 20)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D9" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-625, -342)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D10" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-912, 337)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D11" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-907, 1)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D12" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-943, -351)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D13" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-1079, 320)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D14" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-1098, -51)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D15" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-1105, -361)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D16" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-1264, 314)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D17" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-1260, -34)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="Sprite2D18" type="Sprite2D" parent="murci/murcinodes"]
+position = Vector2(-1268, -396)
+scale = Vector2(0.325684, 0.367188)
+texture = ExtResource("28_stq7k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="murci"]
+light_mask = 3
+visibility_layer = 3
+z_index = 23
+position = Vector2(-667, -15)
+shape = SubResource("RectangleShape2D_4juw3")
 
 [connection signal="body_entered" from="reset" to="CharacterBody2D" method="_on_reset_body_entered"]
