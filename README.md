@@ -7,13 +7,21 @@
 <h3 align="center" style="color:#708090;">Maria Jose Vazquez Romano</h3>
 
 <p align="center">
-  <img src="https://media1.tenor.com/m/DqyyEmRmJK0AAAAC/flowers-cherry-blossom.gif" />
+  <img src="https://i.pinimg.com/736x/48/b6/8d/48b68d727b64c20450f2558ee23c6d3a.jpg" />
 </p>
 
 <div align="center">
   <p>Juego inspirado en los juegos, serie, peliculas y libros de dracula y  castelvania .</p>
   <p>Una mecánica que predomina en el primer nivel es la urgencia por alcanzar la finalidad del mapa a la derecha, para escapar de un muro de murciélagos. De ahí lo "runner", además el camino está habitado por criaturas del averno, que complicarán la huida de nuestro personaje.</p>
 </div>
+
+## 🎮 Demo del Juego
+
+### 🔹 Nivel 1
+![Demo nivel 1](https://s4.ezgif.com/tmp/ezgif-4dbe87a576af8a.gif)
+
+### 🔹 Nivel 2
+![Demo nivel 2](https://s4.ezgif.com/tmp/ezgif-4a403bf67bed4d.gif)
 
 <h1></h1>
 <h1 align="center" style="font-weight:bold; color:#708090;">Assets y audio</h1>
@@ -486,24 +494,21 @@ func LAVA_MOV():
 <h1></h1>
 
 <details>
-	""
-	animacion y funcion para activar el ataque del personaje hacia los enemigos 
-	""
-	func atacar():
+
+ <summary style="color:#708090;">ATAQUE DEL PERSONAJE</summary>
+func atacar():
 	atacando = true
 	$AttackArea.monitoring = true  # activa la detección de colisión
 	sprite.play("ataque")  # la animación debe llamarse "ataque"
 
-	await get_tree().create_timer(0.3).timeout  # tiempo activo de ataque
+	await get_tree().create_timer(0.3).timeout
 	$AttackArea.monitoring = false
 	atacando = false
 </details>
-<h1></h1>
 
 <details>
-	"" sistema de guardado
-	""
-	# Variables ya existentes
+ <summary style="color:#708090;">SISTEMA DE GUARDADO</summary>
+ # Variables ya existentes
 var vidas = 3
 var monedas = 0
 
@@ -532,11 +537,10 @@ func cargar_datos():
 			monedas = save_data["monedas"]
 			label_monedas.text = str(monedas)
 
-		AnimVidas()  # para que se actualicen las imágenes de vida
+		AnimVidas()
 
 # Llamar al cargar escena
 func _ready():
-	# ...
 	cargar_datos()
 
 # Detectar tecla de guardado
@@ -544,8 +548,7 @@ func _input(event):
 	if event.is_action_pressed("guardar"):
 		guardar_datos()
 
-  </details>
-  <h1></h1>
+</details>
 <h1 align="center" style="font-weight:bold; color:#708090;">Dificultades</h1>
 
 <div align="center">
@@ -562,5 +565,5 @@ En conclusion, es un juego en el cual pude hacercarme mas al mundo del videojueg
 <p></p>
 
 <p align="center">
-  <img src="https://media1.tenor.com/m/bmxrC5x1kX8AAAAd/taykumix-divider.gif" />
+  <img src="https://i.pinimg.com/736x/be/eb/90/beeb90e23d9becb3cef36423ea6dd80f.jpg" />
 </p>
