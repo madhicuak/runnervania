@@ -17,11 +17,17 @@
 
 ## 🎮 Demo del Juego
 
-### 🔹 Nivel 1
-![Demo nivel 1](https://s4.ezgif.com/tmp/ezgif-4dbe87a576af8a.gif)
+https://github.com/user-attachments/assets/57df36dd-4e87-44af-909f-671a612d25b5
 
-### 🔹 Nivel 2
-![Demo nivel 2](https://s4.ezgif.com/tmp/ezgif-4a403bf67bed4d.gif)
+
+
+
+
+
+https://github.com/user-attachments/assets/3408b46b-4073-4288-9211-0df3165e5147
+
+
+
 
 <h1></h1>
 <h1 align="center" style="font-weight:bold; color:#708090;">Assets y audio</h1>
