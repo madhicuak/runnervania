@@ -224,6 +224,7 @@ func _on_murci_body_entered(body: Node2D) -> void:
 		ReducirVidas()
 
 
+
 #guardado
 
 # Variables ya existentes
