@@ -13,6 +13,8 @@ var invulnerable := false
 @onready var label_monedas: Label = $Camera2D/ui/MonedaNum
 var atacando :=false 
 
+
+
 func _ready():
 	add_to_group("jugador")
 	AnimVidas()
@@ -223,42 +225,42 @@ func _on_murci_body_entered(body: Node2D) -> void:
 		vidas -= 3
 		ReducirVidas()
 
+## Archivo donde se guardará la info
+var archivo_guardado := "user://jugador.save"
 
-
-#guardado
-
-# Variables ya existentes
-var vida = 3
-var moneda = 0
-
-# GUARDADO
-func guardar_datos():
-	var save_data = {
+func guardar_datos() -> void:
+	var datos: Dictionary = {
 		"posicion": global_position,
 		"vidas": vidas,
 		"monedas": monedas
 	}
-	var file = FileAccess.open("user://jugador.save", FileAccess.WRITE)
-	file.store_var(save_data)
+	var file := FileAccess.open(archivo_guardado, FileAccess.WRITE)
+	file.store_var(datos)
+	file.close()
+	print("Datos guardados:", datos)
+
+func cargar_datos() -> void:
+	if not FileAccess.file_exists(archivo_guardado):
+		print("No existe archivo de guardado.")
+		return
+	
+	var file := FileAccess.open(archivo_guardado, FileAccess.READ)
+	var datos: Dictionary = file.get_var() as Dictionary
 	file.close()
 
-func cargar_datos():
-	if FileAccess.file_exists("user://jugador.save"):
-		var file = FileAccess.open("user://jugador.save", FileAccess.READ)
-		var save_data = file.get_var()
-		file.close()
+	if datos.has("posicion"):
+		global_position = datos["posicion"] as Vector2
+	if datos.has("vidas"):
+		vidas = int(datos["vidas"])
+	if datos.has("monedas"):
+		monedas = int(datos["monedas"])
+		label_monedas.text = str(monedas)
 
-		if "posicion" in save_data:
-			global_position = save_data["posicion"]
-		if "vidas" in save_data:
-			vidas = save_data["vidas"]
-		if "monedas" in save_data:
-			monedas = save_data["monedas"]
-			label_monedas.text = str(monedas)
+	AnimVidas()
+	print("Datos cargados:", datos)
 
-		AnimVidas()  
-
-# Detectar tecla de guardado
-func _input(event):
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("guardar"):
 		guardar_datos()
+	if event.is_action_pressed("cargar"):
+		cargar_datos()
